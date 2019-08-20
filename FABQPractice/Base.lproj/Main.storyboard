@@ -123,6 +123,59 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="App Event" id="dev-Th-5jh">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ehd-3T-j4y">
+                                        <rect key="frame" x="0.0" y="260" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ehd-3T-j4y" id="Gnw-ih-BvQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-qf-jPr">
+                                                    <rect key="frame" x="334" y="7" width="60" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="A06-iC-x5N"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Send"/>
+                                                    <connections>
+                                                        <action selector="tapLogEventSendButton:" destination="pUL-Xf-HGb" eventType="touchUpInside" id="Me1-2z-DYZ"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="logEvent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ex-ig-SMN">
+                                                    <rect key="frame" x="20" y="11.5" width="67" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="String Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zns-K6-uAd">
+                                                    <rect key="frame" x="95" y="13.5" width="231" height="17"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="BGv-qf-jPr" secondAttribute="trailing" constant="20" id="AXV-Q8-Lcw"/>
+                                                <constraint firstItem="zns-K6-uAd" firstAttribute="centerY" secondItem="Gnw-ih-BvQ" secondAttribute="centerY" id="JAc-NO-yWZ"/>
+                                                <constraint firstItem="BGv-qf-jPr" firstAttribute="leading" secondItem="zns-K6-uAd" secondAttribute="trailing" constant="8" id="PNc-SM-URA"/>
+                                                <constraint firstItem="BGv-qf-jPr" firstAttribute="centerY" secondItem="Gnw-ih-BvQ" secondAttribute="centerY" id="Qpo-RC-ow1"/>
+                                                <constraint firstItem="4Ex-ig-SMN" firstAttribute="centerY" secondItem="Gnw-ih-BvQ" secondAttribute="centerY" id="gYQ-8S-n2y"/>
+                                                <constraint firstItem="4Ex-ig-SMN" firstAttribute="leading" secondItem="Gnw-ih-BvQ" secondAttribute="leadingMargin" id="qHj-IX-vtw"/>
+                                                <constraint firstItem="zns-K6-uAd" firstAttribute="leading" secondItem="4Ex-ig-SMN" secondAttribute="trailing" constant="8" id="xHX-g7-q8D"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ydL-Me-QoG">
+                                        <rect key="frame" x="0.0" y="304" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ydL-Me-QoG" id="5YR-IE-BCh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="pUL-Xf-HGb" id="Vpw-MB-7Vg"/>
@@ -130,6 +183,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="eventNameTextField" destination="zns-K6-uAd" id="SVk-S6-7Ht"/>
                         <outlet property="screenNameTextField" destination="itx-cj-zrp" id="Ors-Ja-4ZR"/>
                         <outlet property="userIdTextField" destination="4wT-pk-bLx" id="hhI-Q9-vGo"/>
                     </connections>

@@ -18,17 +18,19 @@ class ViewController: UITableViewController {
     
     @IBOutlet weak var screenNameTextField: UITextField!
     
+    @IBOutlet weak var eventNameTextField: UITextField!
+
     private let defaultScreenName = "first screen"
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Analytics.setScreenName(defaultScreenName, screenClass: nil)
     }
-    
+
     @IBAction func tapUserIDSendButton(_ sender: Any) {
         guard let userID = userIdTextField.text, !userID.isEmpty else {
             showAlert(with: "userID is set to nil")
@@ -38,16 +40,25 @@ class ViewController: UITableViewController {
         
         Analytics.setUserID(userID)
     }
-    
+
     @IBAction func tapScreenNameSendButton(_ sender: Any) {
         guard let screenName = screenNameTextField.text, !screenName.isEmpty else {
             showAlert(with: "screenName is set to nil")
             return
         }
-        
+
         Analytics.setScreenName(screenName, screenClass: nil)
     }
-    
+
+    @IBAction func tapLogEventSendButton(_ sender: Any) {
+        guard let eventName = eventNameTextField.text, !eventName.isEmpty else {
+            showAlert(with: "please input event name")
+            return
+        }
+
+        Analytics.logEvent(eventName, parameters: nil)
+    }
+
     private func showAlert(with message: String) {
         let alert = UIAlertController(title: nil,
                                       message: message,
